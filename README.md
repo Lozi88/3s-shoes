@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3S Shoes</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    input { font-size: 1.2em; padding: 5px; width: 150px; }
+    button { font-size: 1.2em; padding: 6px 12px; }
+    img { max-width: 90%; margin-top: 20px; border: 1px solid #ccc; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>3S Shoes 查圖系統</h1>
+  <input id="code" placeholder="輸入編號，如 A001" />
+  <button onclick="show()">查詢</button>
+  <div id="result"></div>
+
+  <script>
+    const images = {
+      "A001": "https://drive.google.com/uc?export=view&id=14600P2w0fp6xfP2hZNil9qFJR7ot6Waq"
+    };
+
+    function show() {
+      const code = document.getElementById('code').value.trim().toUpperCase();
+      const imgUrl = images[code];
+      const result = document.getElementById('result');
+      if (imgUrl) {
+        result.innerHTML = `<img src="${imgUrl}" alt="${code}">`;
+      } else {
+        result.innerHTML = "<p>找不到這個編號，請確認後再試。</p>";
+      }
+    }
+  </script>
+</body>
+</html>
