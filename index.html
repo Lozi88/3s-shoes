@@ -18,20 +18,20 @@
   <div id="result"></div>
 
   <script>
-    const images = {{
+    const images = {
       "A001": "https://drive.google.com/uc?export=view&id=14600P2w0fp6xfP2hZNil9qFJR7ot6Waq"
-    }};
+   };
 
-    function show() {{
+    function show() {
       const code = document.getElementById('code').value.trim().toUpperCase();
       const imgUrl = images[code];
       const result = document.getElementById('result');
-      if (imgUrl) {{
+      if (imgUrl) {
         result.innerHTML = `<img src="${{imgUrl}}" alt="${{code}}">`;
-      }} else {{
+      } else {
         result.innerHTML = "<p>找不到這個編號，請確認後再試。</p>";
-      }}
-    }}
+      }
+    }
   </script>
 </body>
 </html>
