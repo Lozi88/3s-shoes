@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>3S Shoes 查圖系統</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 30px; }
+    input, button { font-size: 1.2em; padding: 10px; }
+    img { margin-top: 20px; max-width: 90%; border: 1px solid #ccc; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1>3S Shoes 查圖系統</h1>
+  <input id="code" placeholder="輸入編號，如 A001" />
+  <button onclick="show()">查詢</button>
+  <div id="result"></div>
+
+  <script>
+    function show() {
+      const code = document.getElementById('code').value.trim().toUpperCase();
+      const result = document.getElementById('result');
+      const imageUrl = `images/${code}.jpg`; // 對應圖片路徑
+
+      result.innerHTML = `<img src="${imageUrl}" alt="圖片載入中..." onerror="this.onerror=null; this.src='notfound.jpg'" />`;
+    }
+  </script>
+</body>
+</html>
