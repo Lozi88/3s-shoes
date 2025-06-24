@@ -19,7 +19,7 @@
     function show() {
       const code = document.getElementById('code').value.trim().toUpperCase();
       const result = document.getElementById('result');
-      const imageUrl = `images/${code}.jpg`; // 對應圖片路徑
+      const imageUrl = `images/${code}.JPG`; // 對應圖片路徑
 
       result.innerHTML = `<img src="${imageUrl}" alt="圖片載入中..." onerror="this.onerror=null; this.src='notfound.jpg'" />`;
     }
